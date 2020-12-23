@@ -1,9 +1,5 @@
 # PhpMob Settings
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phpmob/settings/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phpmob/settings/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/phpmob/settings/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpmob/settings/?branch=master)
-[![Build Status](https://travis-ci.org/phpmob/settings.svg?branch=master)](https://travis-ci.org/phpmob/settings)
-[![Latest Stable Version](https://poser.pugx.org/phpmob/settings/version)](https://packagist.org/packages/phpmob/settings)
-[![Latest Unstable Version](https://poser.pugx.org/phpmob/settings/v/unstable)](//packagist.org/packages/phpmob/settings)
+[![Build Status](https://travis-ci.org/phakpoom/settings-bundle.svg?branch=master)](https://travis-ci.com/github/phakpoom/settings-bundle/)
 
 Just a Settings Library.
 
