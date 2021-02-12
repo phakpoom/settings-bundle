@@ -33,6 +33,7 @@
             <argument type="service" id="phpmob.settings.transformer"/>
             <argument type="service" id="doctrine.orm.default_metadata_driver"/>
         </service>
+        <service alias="phpmob.settings.manager" id="PhpMob\Settings\Manager\SettingManagerInterface" />
 
         <service id="phpmob.settings.cached_manager" class="PhpMob\Settings\Manager\CachedManager" abstract="true"/>
 
