@@ -17,7 +17,7 @@ use Doctrine\Common\Collections\Collection;
 use PhpMob\Settings\Model\SettingInterface;
 use PhpMob\Settings\Schema\Section;
 use PhpMob\SettingsBundle\Form\Type\SectionUpdateType;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -29,7 +29,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  */
-class UpdateController extends Controller
+class UpdateController extends AbstractController
 {
     /**
      * @param string $section
