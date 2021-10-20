@@ -32,7 +32,7 @@
     },
     "require": {
         "php": ">=7.2",
-        "phakpoom/settings": "^2.1.1",
+        "phakpoom/settings": "^2.1.2",
         "symfony/form": "^3.4|^4.4|^5.0",
         "symfony/framework-bundle": "^3.4|^4.4|^5.0",
         "symfony/templating": "^3.4|^4.4|^5.0",
