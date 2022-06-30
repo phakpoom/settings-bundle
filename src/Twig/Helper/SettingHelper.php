@@ -58,7 +58,7 @@ class SettingHelper extends Helper
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'settings';
     }
