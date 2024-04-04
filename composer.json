@@ -33,9 +33,9 @@
     "require": {
         "php": ">=7.2 || >=8.0",
         "phakpoom/settings": "^2.2.1",
-        "symfony/form": "^3.4|^4.4|^5.0",
-        "symfony/framework-bundle": "^3.4|^4.4|^5.0",
-        "symfony/templating": "^3.4|^4.4|^5.0",
+        "symfony/form": "^4.4 | ^5.0 | ^6.0 | ^7.0",
+        "symfony/framework-bundle": "^4.4 | ^5.0 | ^6.0 | ^7.0",
+        "symfony/templating": "^4.4 | ^5.0 | ^6.0 | ^7.0",
         "twig/twig": "^2.0|^3.0"
     },
     "require-dev": {
