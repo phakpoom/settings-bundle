@@ -39,7 +39,7 @@ class UpdateController extends AbstractController
     private function getSectionSchema(string $section)
     {
         try {
-            return $this->get('phpmob.settings.schema_registry')->getSection($section);
+            return $this->container->get('phpmob.settings.schema_registry')->getSection($section);
         } catch (\Exception $e) {
             throw new NotFoundHttpException($e->getMessage());
         }
@@ -50,7 +50,7 @@ class UpdateController extends AbstractController
      */
     private function getGlobalSettings()
     {
-        return $this->get('phpmob.settings.composite_provider')->findGlobalSettings();
+        return $this->container->get('phpmob.settings.composite_provider')->findGlobalSettings();
     }
 
     /**
@@ -58,7 +58,7 @@ class UpdateController extends AbstractController
      */
     private function getUserSettings()
     {
-        return $this->get('phpmob.settings.composite_provider')->findUserSettings((string)$this->getUser());
+        return $this->container->get('phpmob.settings.composite_provider')->findUserSettings((string)$this->getUser());
     }
 
     /**
@@ -83,7 +83,7 @@ class UpdateController extends AbstractController
      */
     private function transformSettingValue(SettingInterface $setting)
     {
-        return $this->get('phpmob.settings.transformer')
+        return $this->container->get('phpmob.settings.transformer')
             ->reverse($setting->getSection(), $setting->getKey(), $setting->getValue());
     }
 
@@ -117,7 +117,7 @@ class UpdateController extends AbstractController
     {
         $data = $this->createSettingData($this->getSectionedSettings($section->getName(), $settings));
 
-        return $this->get('form.factory')->createNamed('', SectionUpdateType::class, $data, [
+        return $this->container->get('form.factory')->createNamed('', SectionUpdateType::class, $data, [
             'section' => $section,
         ]);
     }
@@ -144,7 +144,7 @@ class UpdateController extends AbstractController
      */
     private function createFlashTranslateMessage(string $message)
     {
-        $translator = $this->get('translator');
+        $translator = $this->container->get('translator');
         $isTranlateKey = $message !== $translated = $translator->trans($message, [], 'flashes');
 
         if ($isTranlateKey) {
@@ -179,7 +179,7 @@ class UpdateController extends AbstractController
      */
     private function updateSettings(Section $section, array $settings = [], ?string $owner = null)
     {
-        $manager = $this->get('phpmob.settings.manager');
+        $manager = $this->container->get('phpmob.settings.manager');
 
         foreach ($settings as $key => $value) {
             $manager->setSetting($section->getName(), $key, $value, $owner);
@@ -213,9 +213,9 @@ class UpdateController extends AbstractController
         }
 
         if ($owner) {
-            $allSections = $this->get('phpmob.settings.schema_registry')->getOwners();
+            $allSections = $this->container->get('phpmob.settings.schema_registry')->getOwners();
         } else {
-            $allSections = $this->get('phpmob.settings.schema_registry')->getGlobals();
+            $allSections = $this->container->get('phpmob.settings.schema_registry')->getGlobals();
         }
 
         if (!$config['isHtml']) {
