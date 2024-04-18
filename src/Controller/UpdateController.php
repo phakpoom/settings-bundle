@@ -204,7 +204,7 @@ class UpdateController extends AbstractController
             $this->updateSettings($section, $form->getData(), $owner);
 
             if (!$config['isHtml']) {
-                return JsonResponse::create(null, 204);
+                return new JsonResponse(null, 204);
             }
 
             $this->addFlash('success', $this->createFlashTranslateMessage($config['flash']));
@@ -219,7 +219,7 @@ class UpdateController extends AbstractController
         }
 
         if (!$config['isHtml']) {
-            return JsonResponse::create([
+            return new JsonResponse([
                 'section' => $section,
                 'sections' => $allSections,
             ]);
